@@ -1,0 +1,3 @@
+# the code runs in wsl so keep lf line endings
+* text=auto eol=lf
+*.pdf binary

@@ -1,0 +1,48 @@
+# ide
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+
+# build
+/build/
+/out/
+/cmake-build-*/
+
+# cmake run in the wrong folder
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/VSInheritEnvironments.txt
+
+# compiled files
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+/gauss
+
+# program output
+/solution*.txt
+/x.txt
+
+# latex temp files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# os files
+.DS_Store
+Thumbs.db
