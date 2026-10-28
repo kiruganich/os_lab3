@@ -9,3 +9,6 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -D_GNU_SOURCE")
 
 add_subdirectory(common)
 add_subdirectory(os)
+
+add_executable(gauss src/gauss/main.c src/gauss/gauss.c src/gauss/system.c)
+target_link_libraries(gauss PRIVATE os common m)
