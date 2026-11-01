@@ -1,0 +1,67 @@
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release > /dev/null
+cmake --build build -j
+gmake[1]: Entering directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+gmake[2]: Entering directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+gmake[3]: Entering directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+gmake[3]: Entering directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+Consolidate compiler generated dependencies of target common
+gmake[3]: Leaving directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+Consolidate compiler generated dependencies of target os
+gmake[3]: Leaving directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+[ 25%] Built target common
+[ 50%] Built target os
+gmake[3]: Entering directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+Consolidate compiler generated dependencies of target gauss
+gmake[3]: Leaving directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+[100%] Built target gauss
+gmake[2]: Leaving directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+gmake[1]: Leaving directory '/mnt/c/STUDY/OS/os_lab3/os_lab3/build'
+bash ./tests/smoke_test.sh /mnt/c/STUDY/OS/os_lab3/os_lab3/build/gauss
+  ok   1.1 exit code 0
+  ok   1.2 the solution is 55/33 68/33 85/33 122/33
+  ok   1.3 the residual is printed
+  ok   2.2 2 threads give the same solution
+  ok   2.3 3 threads give the same solution
+  ok   2.8 8 threads give the same solution
+  ok   3.1 x + y = 3, x - y = 1 gives 2 1
+  ok   3.2 n = 1: 4x = 2 gives 0.5
+  ok   4.1 dependent rows: code 5
+  ok   4.2 the reason is reported
+  ok   4.3 inconsistent rows: code 5
+  ok   4.4 zero matrix: code 5
+  ok   5.1 a word instead of a number: code 3
+  ok   5.2 the position is reported
+  ok   5.3 the input is too short: code 3
+  ok   5.4 extra data after the system: code 3
+  ok   5.5 size 0: code 3
+  ok   5.6 nan: code 3
+  ok   6.1 no -t: code 2
+  ok   6.2 the usage is printed
+  ok   6.3 -t 0 is rejected: code 2
+  ok   6.4 -t -3 is rejected: code 2
+  ok   6.5 -t abc is rejected: code 2
+  ok   6.6 -t 4x is rejected: code 2
+  ok   6.7 -t 257 is rejected: code 2
+  ok   6.8 unknown key: code 2
+  ok   6.9 extra argument: code 2
+  ok   7.1 write error: code 4
+  ok   7.2 the reason is reported
+  ok   8.1 one thread: code 0
+  ok   8.2 residual 2.149e-13 < 1e-9
+  ok   8.3 2 threads: the same residual
+  ok   8.4 4 threads: the same residual
+  ok   8.5 7 threads: the same residual
+  ok   8.6 16 threads: the same residual
+  ok   9.1 5 threads report themselves
+  ok   9.2 the 5 TIDs are different
+  ok   9.3 thread 0 is the main thread
+  ok   10.1 -t 1: at most 1 threads in /proc, code 0
+  ok   10.2 -t 4: at most 4 threads in /proc, code 0
+  ok   10.3 -t 6: at most 6 threads in /proc, code 0
+  ok   11.1 pthread_create fails: code 6
+  ok   11.2 the reason is reported
+  ok   12.1 exit code 0 without EOF after the last row
+  ok   12.2 the size and both rows are asked for
+  ok   12.3 the solution 2 1 is printed
+
+TOTAL: passed 46, failed 0

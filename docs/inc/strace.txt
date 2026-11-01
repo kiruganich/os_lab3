@@ -1,0 +1,54 @@
+1026  clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x716a9c1ff910, parent_tid=0x716a9c1ff910, exit_signal=0, stack=0x716a9b9ff000, stack_size=0x7fff00, tls=0x716a9c1ff640} => {parent_tid=[1027]}, 88) = 1027
+1027  futex(0x7ffff57493d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+1026  clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x716a9b9fe910, parent_tid=0x716a9b9fe910, exit_signal=0, stack=0x716a9b1fe000, stack_size=0x7fff00, tls=0x716a9b9fe640} => {parent_tid=[1028]}, 88) = 1028
+1026  futex(0x7ffff57493d0, FUTEX_WAKE_PRIVATE, 2147483647) = 1
+1027  <... futex resumed>)              = 0
+1027  futex(0x7ffff5749380, FUTEX_WAKE_PRIVATE, 1) = 0
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 0, NULL <unfinished ...>
+1027  futex(0x716a9c41ca60, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+1028  futex(0x716a9c41ca60, FUTEX_WAKE_PRIVATE, 1) = 1
+1027  <... futex resumed>)              = 0
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 0, NULL <unfinished ...>
+1027  futex(0x716a9c41ca60, FUTEX_WAKE_PRIVATE, 1) = 0
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1026  <... futex resumed>)              = 0
+1028  <... futex resumed>)              = 0
+1027  <... futex resumed>)              = 2
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 3, NULL <unfinished ...>
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 3, NULL <unfinished ...>
+1026  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 6, NULL <unfinished ...>
+1028  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  <... futex resumed>)              = 0
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 6, NULL <unfinished ...>
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1028  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1026  <... futex resumed>)              = 0
+1027  <... futex resumed>)              = 1
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 9, NULL <unfinished ...>
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 9, NULL <unfinished ...>
+1026  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 12, NULL <unfinished ...>
+1028  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  <... futex resumed>)              = 0
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 12, NULL <unfinished ...>
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1028  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1026  <... futex resumed>)              = 0
+1027  <... futex resumed>)              = 1
+1026  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 15, NULL <unfinished ...>
+1028  futex(0x5e51ec54c3e4, FUTEX_WAIT_PRIVATE, 15, NULL <unfinished ...>
+1026  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  futex(0x5e51ec54c3e4, FUTEX_WAKE_PRIVATE, 2147483647 <unfinished ...>
+1026  futex(0x716a9c1ff910, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 1027, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+1028  <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+1027  <... futex resumed>)              = 0
+1028  exit(0)                           = ?
+1027  exit(0 <unfinished ...>
+1028  +++ exited with 0 +++
+1027  <... exit resumed>)               = ?
+1026  <... futex resumed>)              = 0
+1027  +++ exited with 0 +++
+1026  +++ exited with 0 +++

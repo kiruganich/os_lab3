@@ -1,0 +1,26 @@
+\section{Значимые фрагменты программы}
+
+Запуск команды потоков: главный поток работает как поток 0, остальные создаются
+\texttt{pthread\_create} и ждут у стартовых ворот; все присоединяются \texttt{pthread\_join}:
+\lstinputlisting[language=C,firstline=129,lastline=151]{inc/os_unix.c}
+
+Стартовые ворота: ожидание на условной переменной и открытие:
+\lstinputlisting[language=C,firstline=71,lastline=89]{inc/os_unix.c}
+
+Шаг прямого хода в каждом потоке: выбор ведущей строки, два барьера:
+\lstinputlisting[language=C,firstline=62,lastline=79]{inc/gauss.c}
+
+Исключение в строках потока (циклическое распределение):
+\lstinputlisting[language=C,firstline=42,lastline=60]{inc/gauss.c}
+
+Полные исходники находятся в \texttt{common/}, \texttt{os/}, \texttt{src/}.
+Копии в \texttt{docs/inc/} используются только для сборки отчёта.
+
+\section{Литература}
+\begin{enumerate}
+\item Man-страницы Linux: pthread\_create(3), pthread\_join(3), pthread\_barrier\_wait(3p),
+      pthread\_cond\_wait(3p), futex(2), clone(2), proc(5), ps(1).
+\item Голуб Дж., Ван Лоун Ч. Матричные вычисления. --- М.: Мир, 1999. Гл. 3.
+\item Репозиторий курса: \MYhref{https://github.com/Yadroff/Operation-Systems}{Operation-Systems}.
+\item Шаблон отчёта: \MYhref{https://github.com/Yadroff/OS_report_template}{OS\_report\_template}.
+\end{enumerate}

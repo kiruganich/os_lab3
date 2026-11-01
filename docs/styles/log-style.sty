@@ -1,0 +1,142 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T2B]{fontenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=2.54cm,
+  right=2.54cm,
+  top=2.54cm,
+  bottom=2.54cm,
+  headheight=0mm,
+  headsep=0mm,
+  footnotesep=0mm,
+  footskip=0mm,
+}
+
+\usepackage{nopageno}
+
+\usepackage{tempora}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\setcounter{secnumdepth}{0}
+
+\usepackage{enumitem}
+
+\frenchspacing
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}%
+
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{csquotes}
+\DeclareQuoteStyle{russian}
+	{\guillemotleft}{\guillemotright}[0.025em]
+	{\quotedblbase}{\textquotedblleft}
+\ExecuteQuoteOptions{style=russian}
+
+\usepackage{graphicx}
+\usepackage{float}
+
+% ---------------------------------------------------------------------------
+% Оформление листингов.
+%
+% Особенность: исходники лабораторной содержат комментарии на русском языке,
+% а штатный listings + inputenc=utf8 не умеет обрабатывать многобайтовые
+% символы (ошибка "Invalid UTF-8 byte sequence"). Решение - таблица литералов
+% (literate), которая сопоставляет каждой кириллической букве команду
+% \cyr... из пакета babel-russian. Эти команды печатают символ в текущей
+% кодировке шрифта (T2B), поэтому текст в листинге выводится корректно.
+% ---------------------------------------------------------------------------
+% columns=fixed (а не fullflexible): при гибких колонках listings не умеет
+% корректно обрабатывать многобайтовые символы кириллицы в паре с таблицей
+% литералов (ошибка "Invalid UTF-8 byte sequence"). При фиксированных
+% колонках вывод корректен.
+\lstset{tabsize=2,
+	breaklines,
+	columns=fixed,
+	numbers=left,
+	numberstyle={\footnotesize},
+	extendedchars,
+	inputencoding=utf8,
+	commentstyle=\color{gray},
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	frame=L,
+	xleftmargin=\parindent,
+	captionpos=b}
+
+\def\@xobeysp{ }
+\def\verbatim@processline{\hspace{1.2cm}\raggedright\the\verbatim@line\par}
+
+\parindent=0pt
+\parskip=3pt
+
+\definecolor{lightgray}{gray}{0.9}
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\color{gray},
+  identifierstyle=\color{black},
+  stringstyle=\color{blue},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+% Буквы кириллицы для листингов (см. пояснение выше).
+\lstset{literate=%
+  {а}{{\cyra}}1 {б}{{\cyrb}}1 {в}{{\cyrv}}1 {г}{{\cyrg}}1 {д}{{\cyrd}}1
+  {е}{{\cyre}}1 {ё}{{\cyryo}}1 {ж}{{\cyrzh}}1 {з}{{\cyrz}}1 {и}{{\cyri}}1
+  {й}{{\cyrishrt}}1 {к}{{\cyrk}}1 {л}{{\cyrl}}1 {м}{{\cyrm}}1 {н}{{\cyrn}}1
+  {о}{{\cyro}}1 {п}{{\cyrp}}1 {р}{{\cyrr}}1 {с}{{\cyrs}}1 {т}{{\cyrt}}1
+  {у}{{\cyru}}1 {ф}{{\cyrf}}1 {х}{{\cyrh}}1 {ц}{{\cyrc}}1 {ч}{{\cyrch}}1
+  {ш}{{\cyrsh}}1 {щ}{{\cyrshch}}1 {ъ}{{\cyrhrdsn}}1 {ы}{{\cyrery}}1
+  {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1
+  {А}{{\CYRA}}1 {Б}{{\CYRB}}1 {В}{{\CYRV}}1 {Г}{{\CYRG}}1 {Д}{{\CYRD}}1
+  {Е}{{\CYRE}}1 {Ё}{{\CYRYO}}1 {Ж}{{\CYRZH}}1 {З}{{\CYRZ}}1 {И}{{\CYRI}}1
+  {Й}{{\CYRISHRT}}1 {К}{{\CYRK}}1 {Л}{{\CYRL}}1 {М}{{\CYRM}}1 {Н}{{\CYRN}}1
+  {О}{{\CYRO}}1 {П}{{\CYRP}}1 {Р}{{\CYRR}}1 {С}{{\CYRS}}1 {Т}{{\CYRT}}1
+  {У}{{\CYRU}}1 {Ф}{{\CYRF}}1 {Х}{{\CYRH}}1 {Ц}{{\CYRC}}1 {Ч}{{\CYRCH}}1
+  {Ш}{{\CYRSH}}1 {Щ}{{\CYRSHCH}}1 {Ъ}{{\CYRHRDSN}}1 {Ы}{{\CYRERY}}1
+  {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1
+  {№}{{\textnumero}}1 {—}{{---}}1 {–}{{--}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {…}{{\ldots}}1 {°}{{\textdegree}}1 {±}{{\textpm}}1
+}
+
+\lstset{escapechar=@,style=customc}
+
+% Оформление подписей к рисункам и таблицам
+\renewcommand{\figurename}{Рис.}
+\renewcommand{\tablename}{Таблица}

@@ -1,0 +1,23 @@
+\documentclass[pdf, unicode, 12pt, a4paper, oneside, fleqn]{article}
+
+\usepackage{styles/log-style}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+% long paths in texttt do not break otherwise
+\sloppy
+
+% smaller listings so code lines fit
+\lstset{basicstyle=\scriptsize\ttfamily}
+
+\input{src/titlepage}
+\input{src/problem}
+\input{src/src}
+\input{src/benchmark}
+\input{src/thinks}
+\input{src/literature}
+
+\end{document}

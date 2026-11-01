@@ -1,0 +1,29 @@
+$ ./gauss -t 4 -g 3000 &
+gauss: pid=951 tid=951 threads=4
+gauss: thread 2/4 tid=996
+gauss: thread 0/4 tid=951
+gauss: thread 1/4 tid=995
+gauss: thread 3/4 tid=997
+
+$ ps -L -o pid,lwp,nlwp,psr,stat,comm -p 951
+    PID     LWP NLWP PSR STAT COMMAND
+    951     951    4   6 Rl+  gauss
+    951     995    4   2 Rl+  gauss
+    951     996    4   8 Rl+  gauss
+    951     997    4   5 Rl+  gauss
+
+$ grep Threads /proc/951/status
+Threads:	4
+
+$ ls /proc/951/task
+951 995 996 997 
+
+$ top -H -b -n 1 -p 951 | tail -n +7
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    951 kirill    20   0  168968 142464   1792 R  99.9   1.8   0:00.91 gauss
+    995 kirill    20   0  168968 142464   1792 R  99.9   1.8   0:00.68 gauss
+    996 kirill    20   0  168968 142464   1792 R  93.3   1.8   0:00.69 gauss
+    997 kirill    20   0  168968 142464   1792 R  93.3   1.8   0:00.68 gauss
+solved: n=3000 threads=4 time=3658.681 ms residual=3.032e-11
+
+exit code: 0
